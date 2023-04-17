@@ -5,7 +5,7 @@ metadata:
   labels:
     app: backend-feed
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: backend-feed
@@ -64,11 +64,20 @@ spec:
                   key: POSTGRES_HOST
             - name: POSTGRES_PASSWORD
               valueFrom:
-                configMapKeyRef:
-                  name: env-config
+                secretKeyRef:
+                  name: env-secret
                   key: POSTGRES_PASSWORD
             - name: POSTGRES_USERNAME
               valueFrom:
-                configMapKeyRef:
-                  name: env-config
+                secretKeyRef:
+                  name: env-secret
                   key: POSTGRES_USERNAME
+          volumeMounts:
+          - name: aws-secret
+            mountPath: "/root/.aws/"
+            readOnly: true        
+      restartPolicy: Always
+      volumes:
+      - name: aws-secret
+        secret:
+          secretName: aws-secret
