@@ -1,2 +1,2 @@
-URL front-end: http://a89de3cd3aa5345a1b8f3404698dbc11-1854197467.us-east-2.elb.amazonaws.com/
-URL reverse-proxy: http://af4a3652cd1cb491889c24bd680b6215-58521373.us-east-2.elb.amazonaws.com:8080/api/v0
+URL front-end: http://a075c949add5448909b78ab0e7d85421-71731566.us-east-1.elb.amazonaws.com/
+URL reverse-proxy: a1bf1ff358baa4f82b88d7a7b43d2dcd-721972197.us-east-1.elb.amazonaws.com:8080/api/v0
